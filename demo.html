@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<link rel="stylesheet" href="jsoneditor.css" />
+	<!--<link rel="stylesheet" href="jquery.reject.css" />-->
+	<!--<link rel="stylesheet" href="app.css" />-->
+</head>
+<body>
+	
+	
+	<textarea  >{"name":"tim5wang"}</textarea>
+	<input type="text" value="[]" id="a001"/>
+	<input type="text" value="酷狗" id="a002"/>
+	
+	<input type="text"   class="aaa" />
+	<input type="text"   class="aaa" />
+	<input type="text"   class="aaa" />
+	<input type="text"   class="aaa" />
+	<!--<script src="jquery.min.js"></script>-->
+	<script type="text/javascript" src="jsoneditor.js" ></script>
+	<!--<script type="text/javascript" src="app.js"></script>
+	<script src="notify.js"></script>
+	<script src="splitter.js"></script>-->
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript">
+	new jsonArea('textarea');
+	new jsonArea('#a001');
+	new jsonArea('#a002');
+	new jsonArea('.aaa',true);
+	</script>
+</body>
+</html>
