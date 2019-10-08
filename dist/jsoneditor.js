@@ -3829,7 +3829,7 @@ function jsonArea(ob) {
   if (!inputEle) {
     throw new Error("没有提供数据源.");
   }
-  // 如果选择器指向多个元素
+  // if target to multi dom
   if (nth) {
     thisare.data = document.querySelectorAll(inputEle)[nth - 1];
   } else {
@@ -3840,12 +3840,12 @@ function jsonArea(ob) {
     // thisare.data = document.querySelector(inputEle);
     return;
   }
-  // 创建容器
+  // create container
   thisare.container = document.createElement("div");
   thisare.container.style.width = "100%";
   thisare.container.style.height = "auto";
   thisare.data.parentElement.insertBefore(thisare.container, thisare.data);
-  // 判断字符串是否为json
+  // check wether is a json
   thisare.isJson = function(str) {
     if (!isNaN(str)) return false;
     if (str == "") return false;
@@ -3861,11 +3861,11 @@ function jsonArea(ob) {
     }
     console.log("不是一个stringify");
   };
-  // json数据
+  // json data
   thisare.jsonval = "{}";
-  // 编辑过程中改变后触发
+  // callback when change
   thisare.syn = function() {};
-  // 判断是 textarea还是input
+  // whether is  textarea or input
   if (thisare.data.tagName == "TEXTAREA") {
     thisare.jsonval = thisare.data.innerHTML;
     thisare.syn = function() {
@@ -3879,11 +3879,11 @@ function jsonArea(ob) {
       change(thisare.jsonEditor.get());
     };
   }
-  // 里面不是json,并且不是插入，就不成为json编辑器
+  // if not json, and not insert ,then json editer
   thisare.hashJson = thisare.isJson(thisare.jsonval);
   if (!thisare.hashJson && !insert) return;
   thisare.data.style.display = "none";
-  // 为容器创建编辑器
+  // create jsoneditor for father
   thisare.jsonEditor = new JSONEditor(thisare.container, {
     change: function() {
       thisare.lastChanged = thisare.jsonEditor;

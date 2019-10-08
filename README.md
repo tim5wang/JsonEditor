@@ -15,11 +15,16 @@
 
 ```js
 jsonArea({
-  el: "jsonArea",
+  el: "textarea",
   change: function(data) {
     console.log(data);
   }
 });
 ```
 
-**特别注意**：input 的 value 属性或者文本域名中放的是 JSON 字符串，即`JSON.stringify({name:"tim",gender:"M"})`处理后的 Object
+**特别注意**：input 的 value 属性或者文本域textarea中放的是 JSON 字符串，即`JSON.stringify({name:"tim",gender:"M"})`处理后的 Object
+
+
+---
+License:
+本项目由[http://jsoneditoronline.org/](http://jsoneditoronline.org/)包装而来。
